@@ -14,6 +14,8 @@ Directory Structure
 ├── Classes
 │   └── vw_*_c.cls
 ├── Documents
+│   └── code_reference.adoc
+│   └── user_guide.????
 ├── Forms
 │   └── vw_*_f.frm
 ├── Modules
