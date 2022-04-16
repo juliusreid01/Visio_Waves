@@ -1,6 +1,6 @@
 Current Visio Waves project directory
 
-Code is developed using test driven development
+Most of this code is developed using test driven development
 Red, Green, Refactor
 
 After enabling Macro Settings -> Allow Programmatic Access to VBProject
