@@ -1,7 +1,7 @@
 == Visio Shape Wrapper
 This class wes created to shorten the length of some lines of code e.g. Shape.Cells("PinX") is now Shape.PinX. We will not list all the properties but will list a few that were added specifically for _Visio Waves_.
 
-* *AddUserCell*::
+* *AddUserCell*
 [horizontal]
 Scope:: Public Sub
 [vertical]
@@ -13,7 +13,7 @@ _String_:: Prompt _(default="")_
 Description::
 Adds a cell to the Shape's PageSheet User-defined cells section with input name and optional prompt parameter
 
-* *SetUserCell*::
+* *SetUserCell*
 [horizontal]
 Scope:: Public Sub
 [vertical]
@@ -25,7 +25,7 @@ Variant:: v
 Description::
 Sets the formula of user cell _Name_ to the input variant _v_
 
-* *AddDataCell*::
+* *AddDataCell*
 [horizontal]
 Scope:: Public Sub
 [vertical]
@@ -37,7 +37,7 @@ _String_:: Prompt _(default="")_
 Description::
 Adds a cell to the Shape's PageSheet Custom Properties section with input name and optional prompt parameter
 
-* *SetDataCell*::
+* *SetDataCell*
 [horizontal]
 Scope:: Public Sub
 [vertical]
@@ -45,12 +45,12 @@ Arguments::
 [horizontal]
 String:: Name
 Variant:: v
-_Variant_:: Position
+_String_:: Position _(default="")_
 [vertical]
 Description::
 Sets the formula of the custom property cell _Name_ to the input variant _v_. If the _position_ argument is not specified the formula is applied to the default column. An error will be raised by Visio if the position is an incorrect value.
 
-* *SetCell*::
+* *SetCell*
 [horizontal]
 Scope:: Public Sub
 [vertical]
