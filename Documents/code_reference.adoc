@@ -5,4 +5,4 @@
 == Overview
 This document serves to explain the code. We should be able to refer to this code to clean up code and or make changes at anytime.
 
-include::visio_shape_wrapper.adoc
+include::visio_shape_wrapper.adoc[]
