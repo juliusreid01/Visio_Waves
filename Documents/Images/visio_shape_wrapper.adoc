@@ -1,0 +1,69 @@
+== Visio Shape Wrapper
+This class wes created to shorten the length of some lines of code e.g. Shape.Cells("PinX") is now Shape.PinX. We will not list all the properties but will list a few that were added specifically for _Visio Waves_.
+
+* *AddUserCell*::
+[horizontal]
+Scope:: Public Sub
+[vertical]
+Arguments::
+[horizontal]
+String:: Name
+_String_:: Prompt _(default="")_
+[vertical]
+Description::
+Adds a cell to the Shape's PageSheet User-defined cells section with input name and optional prompt parameter
+
+* *SetUserCell*::
+[horizontal]
+Scope:: Public Sub
+[vertical]
+Arguments::
+[horizontal]
+String:: Name
+Variant:: v
+[vertical]
+Description::
+Sets the formula of user cell _Name_ to the input variant _v_
+
+* *AddDataCell*::
+[horizontal]
+Scope:: Public Sub
+[vertical]
+Arguments::
+[horizontal]
+String:: Name
+_String_:: Prompt _(default="")_
+[vertical]
+Description::
+Adds a cell to the Shape's PageSheet Custom Properties section with input name and optional prompt parameter
+
+* *SetDataCell*::
+[horizontal]
+Scope:: Public Sub
+[vertical]
+Arguments::
+[horizontal]
+String:: Name
+Variant:: v
+_Variant_:: Position
+[vertical]
+Description::
+Sets the formula of the custom property cell _Name_ to the input variant _v_. If the _position_ argument is not specified the formula is applied to the default column. An error will be raised by Visio if the position is an incorrect value.
+
+* *SetCell*::
+[horizontal]
+Scope:: Public Sub
+[vertical]
+Arguments::
+[horizontal]
+String:: Name
+Variant:: v
+[vertical]
+Description::
+** Allows not knowing if the Cell is in the User-defined, Custom Properties, or anywhere local to the Shape's PageSheet to set it's Value formula.
+** This sub uses Formula Force unlike the other Set*Cell Functions here which use Formula.
+** If the cell is not found anywhere, an Error is raised from the class.
+
+
+
+
