@@ -33,11 +33,11 @@ Public Const S_CLOCK as String = "Clock"
 Public Const S_SIGNAL as String = "Signal"
 Public Const S_ACTIVELOW as String = "Active Low"
 Public Const S_PERIOD as String = "Period"
-Public Const S_SKEW as String = "Skew"
+Public Const S_SKEW as String = "Skew %"
 ' clocks: initial delay
 ' other: delay before a transition
 Public Const S_DELAY as String = "Delay"
-Public Const S_DUTYCYCLE as String = "Duty Cycle"
+Public Const S_DUTYCYCLE as String = "Duty Cycle %"
 ' clocks: additional skew to apply to signals referencing this clock
 Public Const S_SIGNALSKEW as String = "Signal Skew"
 ' bus: width of the bus can use instead of changing the text
@@ -84,4 +84,8 @@ Public Function GenList(ParamArray items() as Variant)
   For i = LBound(items) + 1 to UBound(items)
     GenList = GenList & ";" & items(i)
   Next i
+End Function
+
+Public Function LegalName(str as String) as String
+  LegalName = Replace(Replace(str, " ", ""), "%", "")
 End Function
