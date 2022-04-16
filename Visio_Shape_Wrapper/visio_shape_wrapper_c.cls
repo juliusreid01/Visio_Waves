@@ -164,8 +164,8 @@ Public Property Let EndY(v As Variant)
   End If
 End Property
 
-Public Function GetCellRefName(CellName As String) As String
-  GetCellRefName = s.Name & "!" & CellName
+Public Function WithParent(CellName As String) As String
+  WithParent = s.Name & "!" & CellName
 End Function
 
 Public Sub SetPoint(Section As Integer, Row As Integer, X As Variant, Y As Variant)
