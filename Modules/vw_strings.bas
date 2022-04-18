@@ -25,6 +25,7 @@ Public Const S_PARENT as String = "Parent"
 
 ' the type of signal. Clock, Bit, Bus
 Public Const S_TYPE as String = "Type"
+'//TODO remove this. Let Visio handle the names and use the text
 ' displays the name of the shape for linking
 Public Const S_NAME as String = "Name"
 ' sets a reference clock
@@ -86,6 +87,7 @@ Public Function GenList(ParamArray items() as Variant)
   Next i
 End Function
 
+' cell names cannot have spaces or special characters
 Public Function LegalName(str as String) as String
   LegalName = Replace(Replace(str, " ", ""), "%", "")
 End Function
