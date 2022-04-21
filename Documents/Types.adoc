@@ -1,0 +1,107 @@
+== Types
+
+Visio Waves defines enumerations to identify Shape Types, Event Triggers, and Event Types
+
+Every shape created by Visio Waves will have a Cell named Type which stores the type of shape it is, being one of the following below
+
+* *Shape Types*
+[horizontal]
+Clock::
+Bit::
+Bus::
+Signal:: Mask for Clock, Bit, or Bus
+NotClock:: Mask for Bit or Bus
+Label::
+Node::
+Gate::
+Child:: Mask for Label, Node, or Gate
+Void:: Type value has not been set
+
+* _Signal_ Type shapes will additionally have events, the triggers and types of events are listed below
+
+** *Event Triggers*
+[horizontal]
+Absolute:: An absolute position on the ContainingPage of the shape
+Relative:: A position relative to the shape itself
+Edge:: Any transition on the shape
+Posedge:: Any rising transition on the shape (excluding gates)
+Negedge:: Any falling transition on the shape (excluding gates)
+
+** *Event Types*
+[horizontal]
+Event:: This modifier indicates the event is valid
+Edge:: Indicates the event is an edge (transition affected by delay)
+Gate:: Indicates the event is a Gate (transition not-affected by delay)
+Label:: Indicates the event also has a label
+Node:: Indicates the event also has a node label
+Gap:: Indicates the event also has a spacer/gap
+m1:: Indicates the event should be going to a logic 1
+mz:: Indicates the event should be going to high-impedance
+mx:: Indicates the event goes metastable
+Posedge:: Indicates a rising edge
+Negedge:: Indicates a falling edge
+Gate0:: Indicates a pull down
+Gate1:: Indicates a pull up
+GateX:: Forces metastability
+GateZ:: Forces high impedance
+
+** Visio sections have a maximum of 32767 ((2^15)-1) rows, 0 <= row <= 32766, due to VBA Integer data type being 2-bytes
+
+** If a transition(edge) or gate event requires at least 2 Geometry rows (one to goto the event + one for the actual event), the maximum number of rows in the Scratch section is 16383. Provided there are no performance (or visual) limitations storing event information in 4-bytes (Long)
+
+** Event Types of Edge, can be modified with Label, Node, Gate Event Types
+
+** Event Types of Gate, must be modified with m1, mx, or mz. Otherwise they are Gate0
+
+=== Module Variables
+[horizontal]
+ROW_MASK:: a private const integer used to get the EventType or RowType of an item
+
+=== Module Subroutines
+[horizontal]
+SetEvent:: `private sub` used to set an event on a shape
+Arguments:::
++
+[cols="1,1,5", frame=none, grid=none, options=header]
+|===
+| Type | Identifier | Description
+|[blue]#Shape# | s | The Visio Shape to apply the event
+|[blue]#Integer# | r | Scratch Row to write the event, created if it does not exist
+|[blue]#Long# | e | Event Type to add
+|===
+
+---
+
+[horizontal]
+DriveNegedge:: `public sub` used to create a negative edge event
+DrivePosedge:: `public sub` used to create a positive edge event
+Arguments:::
++
+[cols="1,1,5", frame=none, grid=none, options=header]
+|===
+| Type | Identifier | Description
+|[blue]#Shape# | s | The Visio Shape to apply the event
+|[blue]#Integer# | r | Scratch Row to write the event, created if it does not exist
+|===
+
+_All the above Subroutines share the same argument list_
+
+---
+
+[horizontal]
+DriveX:: `public sub` used to create a gate resembling a drive of X
+DriveZ:: `public sub` used to create a gate resembling a drive of Z
+Drive0:: `public sub` used to create a gate resembling a drive of 0
+Drive1:: `public sub` used to create a gate resembling a drive of 1
+Arguments:::
++
+[cols="1,1,5", frame=none, grid=none, options=header]
+|===
+| Type | Identifier | Description
+|[blue]#Shape# | s | The Visio Shape to apply the event
+|[blue]#Integer# | r | Scratch Row to write the event, created if it does not exist
+|===
+
+_All the above Subroutines share the same argument list_
+
+---
