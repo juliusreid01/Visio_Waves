@@ -104,4 +104,4 @@ Phase::
 * Wavedrom does not let the user control the signal delay before a clock edge
 * Wavedrom appears to add an unknown delay and subtract for phase
 * Wavedrom does not complete signals when Phase does not make sense to it, it should complete the signal width rather than truncate or shift the signal to the right on the diagram.
-
+* In Wavedrom 180 degree phase right = 1, 180 left = -1, etc.
