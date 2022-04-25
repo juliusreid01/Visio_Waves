@@ -18,7 +18,7 @@ def GetComps(path):
         elif isdir(path + "\\" + f):
             GetComps(path + "\\" + f)
 
-GetComps("D:\VW")
+GetComps("D:\Visio Projects\Visio Waves")
 
 fout = open('VBAReset.bas', 'w')
 fout.write("Attribute VB_Name = \"VBAReset\"\n\n")

@@ -7,23 +7,11 @@ Public Sub VBA_Reset()
   On Error Resume Next
   Dim MyComponents as Collection
   Set MyComponents = New Collection
-  MyComponents.Add "D:\VW\Tests\vw_test.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_base_shape.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_base_signal.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_clock.bas"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_base_shape_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_base_signal_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_child_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_clock_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_option_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_Signal_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Forms\vw_frm_cfg.frm"
-  MyComponents.Add "D:\VW\VBComponents\Forms\vw_page_cfg.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_cfg.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_controller.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_strings.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_types.bas"
-  MyComponents.Add "D:\VW\Visio_Shape_Wrapper\visio_shape_wrapper_c.cls"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Modules\vw_strings.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Modules\vw_types.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Tests\vw_test_types.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Tests\vw_visio_wrapper_test.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Visio_Shape_Wrapper\visio_shape_wrapper_c.cls"
   Do While ThisDocument.VBProject.VBComponents.Count > 2
     For Each vbComp in ThisDocument.VBProject.VBComponents
       If Left$(vbComp.Name, 3) = "vw_" Then
@@ -43,23 +31,11 @@ Public Sub UpdateComponent(vbCompName as String)
   On Error Resume Next
   Dim MyComponents as Collection
   Set MyComponents = New Collection
-  MyComponents.Add "D:\VW\Tests\vw_test.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_base_shape.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_base_signal.bas"
-  MyComponents.Add "D:\VW\Tests\vw_test_clock.bas"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_base_shape_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_base_signal_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_child_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_clock_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_option_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Classes\vw_Signal_c.cls"
-  MyComponents.Add "D:\VW\VBComponents\Forms\vw_frm_cfg.frm"
-  MyComponents.Add "D:\VW\VBComponents\Forms\vw_page_cfg.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_cfg.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_controller.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_strings.bas"
-  MyComponents.Add "D:\VW\VBComponents\vw_types.bas"
-  MyComponents.Add "D:\VW\Visio_Shape_Wrapper\visio_shape_wrapper_c.cls"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Modules\vw_strings.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Modules\vw_types.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Tests\vw_test_types.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Tests\vw_visio_wrapper_test.bas"
+  MyComponents.Add "D:\Visio Projects\Visio Waves\Visio_Shape_Wrapper\visio_shape_wrapper_c.cls"
   For Each vbComp in ThisDocument.VBProject.VBComponents
     If LCase(vbComp.Name) = vbCompName Then
       ThisDocument.VBProject.VBComponents.Remove vbComp

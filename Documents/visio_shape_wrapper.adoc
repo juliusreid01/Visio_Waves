@@ -3,7 +3,7 @@ This class wes created to shorten the length of some lines of code e.g. Shape.Ce
 
 * *AddUserCell*
 [horizontal]
-Scope:: Public Sub
+Scope:: `Public Sub`
 [vertical]
 Arguments::
 [horizontal]
@@ -11,11 +11,12 @@ String:: Name
 _String_:: Prompt _(default="")_
 [vertical]
 Description::
-Adds a cell to the Shape's PageSheet User-defined cells section with input name and optional prompt parameter
+Adds a cell to the Shape's PageSheet User-defined cells section with input name and optional prompt parameter +
+NOTE: This sub will not check the Name argument for violations
 
 * *SetUserCell*
 [horizontal]
-Scope:: Public Sub
+Scope:: `Public Sub`
 [vertical]
 Arguments::
 [horizontal]
@@ -27,7 +28,7 @@ Sets the formula of user cell _Name_ to the input variant _v_
 
 * *AddDataCell*
 [horizontal]
-Scope:: Public Sub
+Scope:: `Public Sub`
 [vertical]
 Arguments::
 [horizontal]
@@ -39,7 +40,7 @@ Adds a cell to the Shape's PageSheet Custom Properties section with input name a
 
 * *SetDataCell*
 [horizontal]
-Scope:: Public Sub
+Scope:: `Public Sub`
 [vertical]
 Arguments::
 [horizontal]
@@ -52,7 +53,7 @@ Sets the formula of the custom property cell _Name_ to the input variant _v_. If
 
 * *SetCell*
 [horizontal]
-Scope:: Public Sub
+Scope:: `Public Sub`
 [vertical]
 Arguments::
 [horizontal]
