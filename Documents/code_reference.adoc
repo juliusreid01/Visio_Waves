@@ -7,7 +7,6 @@ This document serves to explain the code. We should be able to refer to this cod
 
 include::visio_shape_wrapper.adoc[]
 
-== Strings
-The file vw_strings.bas is intended to list all of the strings the macro will use that are not native to Visio
+include::Strings.adoc[]
 
-If any string should need to change it should be done in this file.
+include::Types.adoc[]

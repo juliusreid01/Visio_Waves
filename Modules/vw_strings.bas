@@ -1,6 +1,7 @@
 Attribute VB_Name = "vw_strings"
 
-' this file contains strings and string functions we need for Visio Waves
+' this file contains strings for the custom cells and string functions we need for Visio Waves
+Option Explicit
 
 ' The Page PageSheet cell must have this cell to be used as a configuration object
 Public Const S_PAGE_CFG as String = "vw_cfg"
@@ -23,7 +24,7 @@ Public Const S_TEST as String = "Test"
 ' name of the parent shape, which if deleted will delete the shape
 Public Const S_PARENT as String = "Parent"
 
-' the type of signal. Clock, Bit, Bus
+' the type of shape Clock, Signal, Label, etc.
 Public Const S_TYPE as String = "Type"
 '//TODO remove this. Let Visio handle the names and use the text
 ' displays the name of the shape for linking
