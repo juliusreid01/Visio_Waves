@@ -7,6 +7,18 @@ Option Explicit
 Public Const S_PAGE_CFG as String = "vw_cfg"
 Public Const S_PAGE_CFG_FULL as String = "User." & S_PAGE_CFG
 
+'tbd skew on X/Z
+Public Const S_SKEW_ON_ALL_LOGIC as String = "Skew On X_OR_Z"
+' tbd phase
+' clock shift phase x degress with parent clock
+' signal set delay to equivalent of periodic phase shift
+' image a shifted clock being the real clock for this signal
+' TBD S_DELAY does this already???
+''' clka.PERIOD= 0.5 S_DELAY=0
+''' clkb.Parent = clka
+''' clkb.S_DELAY = 0.25 |-> 90 degrees
+Public Const S_PHASE as String = "Phase deg"
+
 ' minimum distance between children
 Public Const S_CHILDOFFSET as String = "Child Offset"
 ' clocks: period * 0.5 * skew
@@ -36,8 +48,8 @@ Public Const S_SIGNAL as String = "Signal"
 Public Const S_ACTIVELOW as String = "Active Low"
 Public Const S_PERIOD as String = "Period"
 Public Const S_SKEW as String = "Skew %"
-' clocks: initial delay
-' other: delay before a transition
+' clocks: initial numerical delay
+' other: numerical delay before a transition
 Public Const S_DELAY as String = "Delay"
 Public Const S_DUTYCYCLE as String = "Duty Cycle %"
 ' clocks: additional skew to apply to signals referencing this clock
@@ -57,6 +69,7 @@ Public Const S_NODESIZEMULT as String = "Node Size Multiplier"
 Public Const S_EVENT_NODE as String = "Node"
 Public Const S_EVENT_GAP as String = "Gap"
 Public Const S_EVENT_EDGE as String = "Transition"
+Public Const S_EVENT_PULSE as String = "Pulse"
 Public Const S_EVENT_DRIVEX as String = "DriveX"
 Public Const S_EVENT_DRIVEZ as String = "DriveZ"
 Public Const S_EVENT_DRIVE0 as String = "Drive0"
