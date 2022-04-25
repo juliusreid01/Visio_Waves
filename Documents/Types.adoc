@@ -24,9 +24,13 @@ Event Triggers are used to determine when the event should occur, this is NOT st
 Event Trigger:: *Description* (Value)
 Absolute:: An absolute position on the ContainingPage of the shape (4)
 Relative:: A position relative to the shape itself (12)
++
+_Relative is kept as 12 to indicate this is a number instead of an index of an existing transition on the Shape_
 Edge:: Any transition on the shape (3)
 Posedge:: Any rising transition on the shape (1)
 Negedge:: Any falling transition on the shape (2)
++
+_Edge, Posedge, and Negedge triggers are linked to the super-ceding geometry. If the edge of a reference signal changes so will the event added using this.
 
 Events are stored in rows of the Visio Waves Shape's PageSheet where the section and column is are determined by constants VW_EVENT_SECTION and VW_EVENT_SECTION_COL. We use additional enumerations to describe what and how data is stored in these rows.
 
@@ -60,4 +64,44 @@ From the programming perspective only GATE and EDGE events exists. From the user
 .. If F_BIT_0 = 1 and F_BIT_1 = 0 then the EVENT is also a GATE_0/DRIVE_0
 .. If F_BIT_0 = 0 and F_BIT_1 = 1 then the EVENT is also a GATE_1/DRIVE_1
 ... F_BIT_0 and F_BIT_1 are absolute and will not respond to inverting the shape
- 
+
+=== Notes on Types
+
+TBD. Who is responsible for this data and enforcing it???
+
+If the code is done in vw_types.bas these rules are kept together but the file name is deceiving. Strings is already doing this with two functions. How many functions do we need for these rules?
+
+. Function GetRow
++
+[%hardbreaks]
+Using _ROW_MASK_ return the Geometry1 Row of the data.
+Needed to manage the geometry.
+[red]#TBD. What about the Geometry section for line endings???#
+The sections are one to one with the scratch rows as Bus types do not have additional geometry and cannot show line endings
+[red]#TBD. What to do if the shape is converted to PolyLine???#
+[yellow]#TBD. What is the savings on say an AXI diagram by converting to Polyline???#
+A PolyLine can be used to draw DriveX but then the LineEndings strategy is lost, it would be better to add DriveX as it's own shape, we don't want a bunch of line endings as shapes. Would closing the shape fix that??? [red]#No#
+
+. Function AddEvent
++
+[%hardbreaks]
+There would be different variations of this function used to manage the events on the shape.
++
+.. Add/Remove Edge, we can let the Signal decided what type of Edge this is, Positive Negative.
+... The problem is we know it is better performance to determine that after adding all events.
+... _With the exception of a clock, events are added by the user one by one and this should not matter._
+.. Add/Remove GateX, as of now this is looking to be an entirely new shape but should be called the same way as Add/Remove Edge and also modify the Signal's Geometry1 to avoid overlapping while hiding any additional Geometry Sections through NoLine = True
+.. Add/Remove Gate0/1, no need to be a new shape just pull to the direction of the version indicated
+.. Add/Remove GateZ, as of now no new shape, but for colorization maybe, can use additional geometry with NoLine = True and Fill = Gold
+.. Add/Remove Label, child shape where PinX = Scratch.X~i and PinY = Parent!PinY + Parent!Height + Height???
+.. Add/Remove Node, child shape where PinX TBD and PinY = Parent!PinY + (Parent!Height/2)
+.. Add/Remove Gap, child shape where PinX TBD and PinY = Parent!PinY + Parent!Height
+
+
+=== Notes
+
+Phase::
+* Wavedrom does not let the user control the signal delay before a clock edge
+* Wavedrom appears to add an unknown delay and subtract for phase
+* Wavedrom does not complete signals when Phase does not make sense to it, it should complete the signal width rather than truncate or shift the signal to the right on the diagram.
+
