@@ -6,27 +6,27 @@ This module will contain constant values, enumerations, subroutines and function
 
 Every shape created by Visio Waves will have a User-defined cell named Type where the value stores the type of shape it is, following the table below
 [horizontal]
-Shape Type:: *Description*
-Void:: Type value has not been set
-Signal:: Mask for Clock, Bit, or Bus
-Data:: Mask for Bit or Bus
-Clock:: Indicates signal is a clock
-Bit:: Indicates signal is a bit
-Bus:: Indicates signal is a bus
-Child:: Mask for Label, Node, or Gate
-Label:: Indicates the shape is a label
-Node:: Indicates the shape is a node
-Gate:: Indicates the shape is a GateX/DriveX
-Gap:: Indicates the shape is a gap/spacer indicating some time has passed
+Shape Type:: *Description* (Value)
+Void:: Type value has not been set (0)
+Signal:: Mask for Clock, Bit, or Bus (7)
+Data:: Mask for Bit or Bus (3)
+Clock:: Indicates signal is a clock (4)
+Bit:: Indicates signal is a bit (1)
+Bus:: Indicates signal is a bus (2)
+Child:: Mask for Label, Node, or Gate (120)
+Label:: Indicates the shape is a label (8)
+Node:: Indicates the shape is a node (16)
+Gate:: Indicates the shape is a GateX/DriveX (32)
+Gap:: Indicates the shape is a gap/spacer indicating some time has passed (64)
 
-Event Triggers are used to determine when the event should occur, this is mostly to relay information to the user as the trigger is NOT stored within the shape.
+Event Triggers are used to determine when the event should occur, this is NOT stored within the shape.
 [horizontal]
-Event Trigger:: *Description*
-Absolute:: An absolute position on the ContainingPage of the shape
-Relative:: A position relative to the shape itself
-Edge:: Any transition on the shape
-Posedge:: Any rising transition on the shape (excluding gates)
-Negedge:: Any falling transition on the shape (excluding gates)
+Event Trigger:: *Description* (Value)
+Absolute:: An absolute position on the ContainingPage of the shape (4)
+Relative:: A position relative to the shape itself (12)
+Edge:: Any transition on the shape (3)
+Posedge:: Any rising transition on the shape (1)
+Negedge:: Any falling transition on the shape (2)
 
 Events are stored in rows of the Visio Waves Shape's PageSheet where the section and column is are determined by constants VW_EVENT_SECTION and VW_EVENT_SECTION_COL. We use additional enumerations to describe what and how data is stored in these rows.
 
