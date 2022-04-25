@@ -44,9 +44,9 @@ Public Const S_DUTYCYCLE as String = "Duty Cycle %"
 Public Const S_SIGNALSKEW as String = "Signal Skew"
 ' bus: width of the bus can use instead of changing the text
 Public Const S_BUSWIDTH as String = "Bus Width"
-Public Const S_EVENTTYPE as String = "Event Type"
-Public Const S_EVENTTRIGGER as String = "Event Trigger"
-Public Const S_EVENTPOSITION as String = "Event Position"
+Public Const S_EVENTTYPE as String = "Action"
+Public Const S_EVENTTRIGGER as String = "Action Trigger"
+Public Const S_EVENTPOSITION as String = "Action Position"
 Public Const S_LABELEDGES as String = "Label Edges"
 Public Const S_LABELSIZE as String = "Label Size"
 Public Const S_LABELFONT as String = "Label Font Size"
@@ -61,7 +61,7 @@ Public Const S_EVENT_DRIVEX as String = "DriveX"
 Public Const S_EVENT_DRIVEZ as String = "DriveZ"
 Public Const S_EVENT_DRIVE0 as String = "Drive0"
 Public Const S_EVENT_DRIVE1 as String = "Drive1"
-Public Const S_EVENT_DELETE as String = "Delete"
+Public Const S_EVENT_DELETE as String = "Remove"
 
 ' event trigger strings
 Public Const S_TRIGGER_EDGE as String = "Any Edge"
@@ -81,7 +81,7 @@ Public Const S_LBL_RND_DIAMOND as String = "Rounded Diamond"
 Public Const S_LBL_OVAL as String = "Oval"
 Public Const S_LBL_CIRCLE as String = "Circle"
 
-Public Function GenList(ParamArray items() as Variant)
+Public Function GenList(ByVal ParamArray items() as Variant) as String
   GenList = items(LBound(items))
   For i = LBound(items) + 1 to UBound(items)
     GenList = GenList & ";" & items(i)
