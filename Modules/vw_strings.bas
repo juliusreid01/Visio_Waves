@@ -6,6 +6,10 @@ Option Explicit
 ' The Page PageSheet cell must have this cell to be used as a configuration object
 Public Const S_PAGE_CFG as String = "vw_cfg"
 Public Const S_PAGE_CFG_FULL as String = "User." & S_PAGE_CFG
+' controls if dimensions are shown when add absolute/relative items are set to be added
+Public Const S_SHOW_DIMENSIONS as String = "Show Dimensions"
+'//TODO. should Visio Waves look for a cfg file??? If so, where???
+' Is it more convenient for the use to edit a defaults file???
 
 'tbd skew on X/Z
 Public Const S_SKEW_ON_ALL_LOGIC as String = "Skew On X_OR_Z"
