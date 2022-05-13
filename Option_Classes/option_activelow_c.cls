@@ -2,7 +2,7 @@ VERSION 1.0 Class
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "option_showdimensions_c"
+Attribute VB_Name = "option_activelow_c"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
@@ -19,8 +19,8 @@ Public Sub option_c_AddTo(obj as Shape)
   Dim Row as Integer
 
   ' this is the first unique part
-  DisplayName = S_SHOW_DIMENSIONS
-  Prompt = """Set to show dimensions when adding an absolute or relative trigger type"""
+  DisplayName = S_ACTIVELOW
+  Prompt = """"""
   Section = visSectionProp
 
   Name = vw_strings.LegalName(DisplayName)

@@ -30,28 +30,74 @@ def Header(d):
   h += "  Else\n"
   h += "    Row = obj.Cells(CellName).Row\n"
   h += "  End If\n\n"
-  h += "  If Section = visSectionProp Then _\n"
-  h += "    obj.CellsSRC(Section, Row, visCustPropsLabel).Formula = \"\"\"\" & DisplayName & \"\"\"\"\n\n"
 
+  h += "  ' additional uniqueness may exist here\n"
   h += "  If Section = visSectionProp Then\n"
   h += "    obj.CellsSRC(Section, Row, visCustPropsPrompt).Formula = Prompt\n"
-  h += "    obj.CellsSRC(Section, Row, visCustPropsType).Formula = " + d['type'] + "\n"
+  h += "    obj.CellsSRC(Section, Row, visCustPropsLabel).Formula = \"\"\"\" & DisplayName & \"\"\"\"\n"
+  for k in d:
+    if k[:3] == 'vis':
+      h += "    obj.CellsSRC(Section, Row, " + k + ").Formula = " + d[k] + "\n"
   h += "  ElseIf Section = visSectionUser Then\n"
   h += "    obj.CellsSRC(Section, Row, visUserPrompt).Formula = Prompt\n"
   h += "  End If\n"
   return h
 
 dimensions = {'name' : 'ShowDimensions', 'var' : 'S_SHOW_DIMENSIONS',
-              'sect' : 'visSectionProp', 'type' : 'visPropTypeBool',
+              'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeBool',
               'desc' : "Set to show dimensions when adding an absolute or relative trigger type"}
 childoffset = {'name' : 'ChildOffset', 'var' : 'S_CHILDOFFSET',
-              'sect' : 'visSectionProp', 'type' : 'visPropTypeNumber',
+              'sect' : 'visSectionProp', 'type' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
               'desc' : "Minimum distance between other signals using this signal as a reference"}
 skewwidth = {'name' : 'SkewWidth', 'var' : 'S_SKEWWIDTH',
-              'sect' : 'visSectionUser', 'type' : 'visPropTypeNumber',
+              'sect' : 'visSectionUser', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
               'desc' : ""}
+activelow = {'name' : 'activelow', 'var' : 'S_ACTIVELOW',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeBool',
+             'desc' : ""}
+period = {'name' : 'period', 'var' : 'S_PERIOD',
+          'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
+          'desc' : ""}
+skew = {'name' : 'skew', 'var' : 'S_SKEW',
+        'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.0 %"""',
+        'desc' : ""}
+i_delay = {'name' : 'delay', 'var' : 'S_SKEW',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
+           'desc' : ""}
+s_delay = {'name' : 'delay', 'var' : 'S_SKEW',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
+           'desc' : ""}
+s_duty = {'name' : 'dutycycle', 'var' : 'S_DUTYCYCLE',
+          'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 %"""',
+          'desc' : ""}
+s_sigskew = {'name' : 'signalskew', 'var' : 'S_SIGNALSKEW',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
+             'desc' : "Additional skew to apply to signals on top of the clock skew"}
+s_busw = {'name' : 'buswidth', 'var' : 'S_BUSWIDTH',
+          'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber',
+          'desc' : "Controls text for Bus Signal Types"}
+s_lbledges = {'name' : 'labeledges', 'var' : 'S_LABELEDGES',
+              'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListVar',
+              'desc' : "Controls which labels are shown about the Signal transitions"}
+s_lblsize = {'name' : 'labelsize', 'var' : 'S_LABELSIZE',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+             'desc' : "Controls the size of labels"}
+s_lblfont = {'name' : 'labelfont', 'var' : 'S_LABELFONT',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+             'desc' : "Controls the font size of labels"}
+s_nodefont = {'name' : 'nodefont', 'var' : 'S_NODEFONT',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+             'desc' : "Controls the font size of nodes"}
+s_nodesize = {'name' : 'nodesizemult', 'var' : 'S_NODESIZEMULT',
+             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+             'desc' : "Controls the size of nodes"}
+s_lblshape = {'name' : 'labelshape', 'var' : 'S_LABELSHAPE',
+              'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListFIX',
+              'visCustPropsFormat' : 'vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE',
+              'desc' : "Controls the shape of labels"}
 
-options = [dimensions]
+options = [dimensions, childoffset, skewwidth, activelow, period, skew, i_delay, s_delay, s_duty, s_sigskew, s_busw, s_lbledges, s_lblsize, s_lblfont, s_nodefont, s_nodesize, s_lblshape]
+
 path = "D:\Visio Projects\Visio Waves\Option_Classes"
 
 for opt in options:
