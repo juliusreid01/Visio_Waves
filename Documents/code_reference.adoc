@@ -10,3 +10,5 @@ include::visio_shape_wrapper.adoc[]
 include::Strings.adoc[]
 
 include::Types.adoc[]
+
+include::PageConfig.adoc[]

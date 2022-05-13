@@ -9,7 +9,7 @@ Public Const S_PAGE_CFG_FULL as String = "User." & S_PAGE_CFG
 ' controls if dimensions are shown when add absolute/relative items are set to be added
 Public Const S_SHOW_DIMENSIONS as String = "Show Dimensions"
 '//TODO. should Visio Waves look for a cfg file??? If so, where???
-' Is it more convenient for the use to edit a defaults file???
+' Is it more convenient for the user to edit a defaults file???
 
 'tbd skew on X/Z
 Public Const S_SKEW_ON_ALL_LOGIC as String = "Skew On X_OR_Z"
@@ -98,7 +98,7 @@ Public Const S_LBL_RND_DIAMOND as String = "Rounded Diamond"
 Public Const S_LBL_OVAL as String = "Oval"
 Public Const S_LBL_CIRCLE as String = "Circle"
 
-Public Function GenList(ByVal ParamArray items() as Variant) as String
+Public Function GenList(ParamArray items() as Variant) as String
   GenList = items(LBound(items))
   For i = LBound(items) + 1 to UBound(items)
     GenList = GenList & ";" & items(i)

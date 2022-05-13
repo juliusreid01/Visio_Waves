@@ -30,7 +30,7 @@ Edge:: Any transition on the shape (3)
 Posedge:: Any rising transition on the shape (1)
 Negedge:: Any falling transition on the shape (2)
 +
-_Edge, Posedge, and Negedge triggers are linked to the super-ceding geometry. If the edge of a reference signal changes so will the event added using this.
+_Edge, Posedge, and Negedge triggers are linked to the super-ceding geometry. If the edge of a reference signal changes so will the event added using this_
 
 Events are stored in rows of the Visio Waves Shape's PageSheet where the section and column is are determined by constants VW_EVENT_SECTION and VW_EVENT_SECTION_COL. We use additional enumerations to describe what and how data is stored in these rows.
 
@@ -87,7 +87,7 @@ A PolyLine can be used to draw DriveX but then the LineEndings strategy is lost,
 [%hardbreaks]
 There would be different variations of this function used to manage the events on the shape.
 +
-.. Add/Remove Edge, we can let the Signal decided what type of Edge this is, Positive Negative.
+.. Add/Remove Edge, we can let the Signal decide what type of Edge this is, Positive Negative.
 ... The problem is we know it is better performance to determine that after adding all events.
 ... _With the exception of a clock, events are added by the user one by one and this should not matter._
 .. Add/Remove GateX, as of now this is looking to be an entirely new shape but should be called the same way as Add/Remove Edge and also modify the Signal's Geometry1 to avoid overlapping while hiding any additional Geometry Sections through NoLine = True
@@ -100,7 +100,7 @@ There would be different variations of this function used to manage the events o
 
 === Notes
 
-Phase::
+Wavedrom::
 * Wavedrom does not let the user control the signal delay before a clock edge
 * Wavedrom appears to add an unknown delay and subtract for phase
 * Wavedrom does not complete signals when Phase does not make sense to it, it should complete the signal width rather than truncate or shift the signal to the right on the diagram.

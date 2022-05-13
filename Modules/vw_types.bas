@@ -29,7 +29,7 @@ Public Enum EventTrigger_t
   Negedge = 2
 End Enum
 
-Private Eunm EventFields_t
+Private Enum EventFields_t
   ' indicates bit 1 is set
   F_BIT_1 = 2^30
   ' indicates bit 0 is set
