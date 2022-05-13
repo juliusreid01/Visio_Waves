@@ -61,42 +61,42 @@ period = {'name' : 'period', 'var' : 'S_PERIOD',
 skew = {'name' : 'skew', 'var' : 'S_SKEW',
         'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.0 %"""',
         'desc' : ""}
-i_delay = {'name' : 'delay', 'var' : 'S_SKEW',
+i_delay = {'name' : 'i_delay', 'var' : 'S_SKEW',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : ""}
-s_delay = {'name' : 'delay', 'var' : 'S_SKEW',
+s_delay = {'name' : 's_delay', 'var' : 'S_SKEW',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : ""}
-s_duty = {'name' : 'dutycycle', 'var' : 'S_DUTYCYCLE',
-          'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 %"""',
-          'desc' : ""}
-s_sigskew = {'name' : 'signalskew', 'var' : 'S_SIGNALSKEW',
-             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
-             'desc' : "Additional skew to apply to signals on top of the clock skew"}
-s_busw = {'name' : 'buswidth', 'var' : 'S_BUSWIDTH',
-          'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber',
-          'desc' : "Controls text for Bus Signal Types"}
-s_lbledges = {'name' : 'labeledges', 'var' : 'S_LABELEDGES',
-              'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListVar',
-              'desc' : "Controls which labels are shown about the Signal transitions"}
-s_lblsize = {'name' : 'labelsize', 'var' : 'S_LABELSIZE',
-             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
-             'desc' : "Controls the size of labels"}
-s_lblfont = {'name' : 'labelfont', 'var' : 'S_LABELFONT',
-             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
-             'desc' : "Controls the font size of labels"}
-s_nodefont = {'name' : 'nodefont', 'var' : 'S_NODEFONT',
-             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
-             'desc' : "Controls the font size of nodes"}
-s_nodesize = {'name' : 'nodesizemult', 'var' : 'S_NODESIZEMULT',
-             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
-             'desc' : "Controls the size of nodes"}
-s_lblshape = {'name' : 'labelshape', 'var' : 'S_LABELSHAPE',
-              'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListFIX',
-              'visCustPropsFormat' : 'vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE',
-              'desc' : "Controls the shape of labels"}
+duty = {'name' : 'dutycycle', 'var' : 'S_DUTYCYCLE',
+        'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 %"""',
+        'desc' : ""}
+sigskew = {'name' : 'signalskew', 'var' : 'S_SIGNALSKEW',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
+           'desc' : "Additional skew to apply to signals on top of the clock skew"}
+busw = {'name' : 'buswidth', 'var' : 'S_BUSWIDTH',
+        'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber',
+        'desc' : "Controls text for Bus Signal Types"}
+lbledges = {'name' : 'labeledges', 'var' : 'S_LABELEDGES',
+            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListVar',
+            'desc' : "Controls which labels are shown about the Signal transitions"}
+lblsize = {'name' : 'labelsize', 'var' : 'S_LABELSIZE',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+           'desc' : "Controls the size of labels"}
+lblfont = {'name' : 'labelfont', 'var' : 'S_LABELFONT',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+           'desc' : "Controls the font size of labels"}
+nodefont = {'name' : 'nodefont', 'var' : 'S_NODEFONT',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+           'desc' : "Controls the font size of nodes"}
+nodesize = {'name' : 'nodesizemult', 'var' : 'S_NODESIZEMULT',
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+           'desc' : "Controls the size of nodes"}
+lblshape = {'name' : 'labelshape', 'var' : 'S_LABELSHAPE',
+            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListFIX',
+            'visCustPropsFormat' : 'vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE',
+            'desc' : "Controls the shape of labels"}
 
-options = [dimensions, childoffset, skewwidth, activelow, period, skew, i_delay, s_delay, s_duty, s_sigskew, s_busw, s_lbledges, s_lblsize, s_lblfont, s_nodefont, s_nodesize, s_lblshape]
+options = [dimensions, childoffset, skewwidth, activelow, period, skew, i_delay, i_delay, s_delay, duty, sigskew, busw, lbledges, lblsize, lblfont, nodefont, nodesize, lblshape]
 
 path = "D:\Visio Projects\Visio Waves\Option_Classes"
 

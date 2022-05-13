@@ -2,7 +2,7 @@ VERSION 1.0 Class
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "option_delay_c"
+Attribute VB_Name = "option_i_delay_c"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
