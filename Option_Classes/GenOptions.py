@@ -61,10 +61,10 @@ period = {'name' : 'period', 'var' : 'S_PERIOD',
 skew = {'name' : 'skew', 'var' : 'S_SKEW',
         'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.0 %"""',
         'desc' : ""}
-i_delay = {'name' : 'i_delay', 'var' : 'S_SKEW',
+i_delay = {'name' : 'i_delay', 'var' : 'S_DELAY',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : ""}
-s_delay = {'name' : 's_delay', 'var' : 'S_SKEW',
+s_delay = {'name' : 's_delay', 'var' : 'S_DELAY',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : ""}
 duty = {'name' : 'dutycycle', 'var' : 'S_DUTYCYCLE',
