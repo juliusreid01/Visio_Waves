@@ -1,0 +1,37 @@
+== Page Config
+
+The user can control Visio Waves with the Page Config, which will lead to most engineers copying Visio Pages to bypass some configurations. However, the capability should be available to avoid this.
+
+The goal is to apply User Specific configuration details to the PageSheet to avoid the user having to set certain variables.
+
+[yellow]#TBD how to determine where the current file or current stencil is, this allows reading a file in that folder for configuration values.#
+
+PageConfig options are described in a Google doc here:
+https://docs.google.com/spreadsheets/d/1UhRc6MOGnGXNpQi_H3Dh2GCmHFlY3BnvpeXVlJC3hcw/edit?usp=sharing under the *Options* worksheet
+
+=== Form
+Use a MessageBox to prompt the user on allowing VBA to use the PageSheet of the ActivePage for default property values where Buttons = vbYesNoCancel +
+[horizontal]
+vbYes:: a user cell is added to the page sheet and shape data is populated with default values
+vbNo:: a user cell is added to the page sheet but shape data is not populated
+vbCancel:: we're going to keep asking since no user cell is added to the page sheet
+
+*Ideas*
+[horizontal]
+use page config:: By default don't ask to use the page config variables
++
+[%hardbreaks]
+S_PAGE_CELL = Null, the user has not been asked and we will ask every time.
+S_PAGE_CELL = False, the user has been asked and will not be asked again.
+S_PAGE_CELL = True, the user has been asked and agreed to use values on the Current Page's Page Sheet.
+_If reading from a file, S_PAGE_CELL = No is S_PAGE_CELL = False_ +
+_If reading from a file, S_PAGE_CELL = Yes is S_PAGE_CELL = True_
++
+
+//+
+
+[vertical]
+Having 3 possible locations for an option means they must be categorized::
+* Some options should be invisible when the PageConfig has them
+* Some options are common and should always show
+* Some options are rarely used and need to be shown when requested by the user
