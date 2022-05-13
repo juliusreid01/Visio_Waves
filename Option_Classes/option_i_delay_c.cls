@@ -19,8 +19,8 @@ Public Sub option_c_AddTo(obj as Shape)
   Dim Row as Integer
 
   ' this is the first unique part
-  DisplayName = S_SKEW
-  Prompt = """"""
+  DisplayName = "Clock " & S_DELAY
+  Prompt = """Initial delay for a clock signal to start"""
   Section = visSectionProp
 
   Name = vw_strings.LegalName(DisplayName)

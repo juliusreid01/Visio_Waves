@@ -61,12 +61,12 @@ period = {'name' : 'period', 'var' : 'S_PERIOD',
 skew = {'name' : 'skew', 'var' : 'S_SKEW',
         'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.0 %"""',
         'desc' : ""}
-i_delay = {'name' : 'i_delay', 'var' : 'S_DELAY',
+i_delay = {'name' : 'i_delay', 'var' : '"Clock " & ' + 'S_DELAY',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
-           'desc' : ""}
-s_delay = {'name' : 's_delay', 'var' : 'S_DELAY',
+           'desc' : "Initial delay for a clock signal to start"}
+s_delay = {'name' : 's_delay', 'var' : '"Signal " & ' + 'S_DELAY',
            'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
-           'desc' : ""}
+           'desc' : "Delay before a data signal will transition when referencing a clock"}
 duty = {'name' : 'dutycycle', 'var' : 'S_DUTYCYCLE',
         'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 %"""',
         'desc' : ""}

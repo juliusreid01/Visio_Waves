@@ -17,6 +17,16 @@ Public Sub SetPageOptions(s as Shape)
   opts.Add o
   Set o = New option_childoffset_c
   opts.Add o
+  Set o = New option_skewwidth_c
+  opts.Add o
+  Set o = New option_activelow_c
+  opts.Add o
+  Set o = New option_period_c
+  opts.Add o
+  Set o = New option_skew_c
+  opts.Add o
+  Set o = New option_i_delay_c
+  opts.Add o
 
   For Each o in opts
     o.AddTo s

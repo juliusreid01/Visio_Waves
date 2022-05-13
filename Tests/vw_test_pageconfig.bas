@@ -72,6 +72,8 @@ Public Sub TestPageConfig()
         Prompt:="Page Config set should not expect another inquiry"
     End If
   Next
+
+  Stop ' review before resuming
   DeleteCfg ActivePage.PageSheet
 End Sub
 
