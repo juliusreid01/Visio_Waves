@@ -66,6 +66,17 @@ Public Sub TestPageConfig()
       If PageHasCell(S_ACTIVELOW) = False Then Stop
       If PageHasCell(S_PERIOD) = False Then Stop
       If PageHasCell(S_SKEW) = False Then Stop
+      If PageHasCell("Clock" & S_DELAY) = False Then Stop
+      If PageHasCell("Signal" & S_DELAY) = False Then Stop
+      If PageHasCell(S_DUTYCYCLE) = False Then Stop
+      If PageHasCell(S_SIGNALSKEW) = False Then Stop
+      If PageHasCell(S_BUSWIDTH) = False Then Stop
+      If PageHasCell(S_LABELEDGES) = False Then Stop
+      If PageHasCell(S_LABELSIZE) = False Then Stop
+      If PageHasCell(S_LABELFONT) = False Then Stop
+      If PageHasCell(S_NODEFONT) = False Then Stop
+      If PageHasCell(S_NODESIZEMULT) = False Then Stop
+      If PageHasCell(S_LBL_SHAPE) = False Then Stop
     End If
     If i = 2 And rsp > 0 Then
       MsgBox Title:="Page Config Test", Buttons:=vbCritical + vbOkayOnly, _

@@ -19,7 +19,7 @@ Public Sub option_c_AddTo(obj as Shape)
   Dim Row as Integer
 
   ' this is the first unique part
-  DisplayName = S_LABELSHAPE
+  DisplayName = S_LBL_SHAPE
   Prompt = """Controls the shape of labels"""
   Section = visSectionProp
 
@@ -36,7 +36,7 @@ Public Sub option_c_AddTo(obj as Shape)
     obj.CellsSRC(Section, Row, visCustPropsPrompt).Formula = Prompt
     obj.CellsSRC(Section, Row, visCustPropsLabel).Formula = """" & DisplayName & """"
     obj.CellsSRC(Section, Row, visCustPropsType).Formula = visPropTypeListFIX
-    obj.CellsSRC(Section, Row, visCustPropsFormat).Formula = vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE
+    obj.CellsSRC(Section, Row, visCustPropsFormat).Formula = """" & vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE) & """"
   ElseIf Section = visSectionUser Then
     obj.CellsSRC(Section, Row, visUserPrompt).Formula = Prompt
   End If

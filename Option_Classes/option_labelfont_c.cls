@@ -35,8 +35,8 @@ Public Sub option_c_AddTo(obj as Shape)
   If Section = visSectionProp Then
     obj.CellsSRC(Section, Row, visCustPropsPrompt).Formula = Prompt
     obj.CellsSRC(Section, Row, visCustPropsLabel).Formula = """" & DisplayName & """"
-    obj.CellsSRC(Section, Row, visCustPropsType).Formula = visPropTypeListNumber
-    obj.CellsSRC(Section, Row, visCustPropsFormat).Formula = 0 pt
+    obj.CellsSRC(Section, Row, visCustPropsType).Formula = visPropTypeNumber
+    obj.CellsSRC(Section, Row, visCustPropsFormat).Formula = """0 pt"""
   ElseIf Section = visSectionUser Then
     obj.CellsSRC(Section, Row, visUserPrompt).Formula = Prompt
   End If

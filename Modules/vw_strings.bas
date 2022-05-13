@@ -1,7 +1,6 @@
 Attribute VB_Name = "vw_strings"
 
 ' this file contains strings for the custom cells and string functions we need for Visio Waves
-Option Explicit
 
 ' The Page PageSheet cell must have this cell to be used as a configuration object
 Public Const S_PAGE_CFG as String = "vw_cfg"

@@ -80,20 +80,20 @@ lbledges = {'name' : 'labeledges', 'var' : 'S_LABELEDGES',
             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListVar',
             'desc' : "Controls which labels are shown about the Signal transitions"}
 lblsize = {'name' : 'labelsize', 'var' : 'S_LABELSIZE',
-           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : "Controls the size of labels"}
 lblfont = {'name' : 'labelfont', 'var' : 'S_LABELFONT',
-           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 pt"""',
            'desc' : "Controls the font size of labels"}
 nodefont = {'name' : 'nodefont', 'var' : 'S_NODEFONT',
-           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0 pt""",
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0 pt"""',
            'desc' : "Controls the font size of nodes"}
 nodesize = {'name' : 'nodesizemult', 'var' : 'S_NODESIZEMULT',
-           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListNumber', 'visCustPropsFormat' : """0.00 u""",
+           'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeNumber', 'visCustPropsFormat' : '"""0.00 u"""',
            'desc' : "Controls the size of nodes"}
-lblshape = {'name' : 'labelshape', 'var' : 'S_LABELSHAPE',
+lblshape = {'name' : 'labelshape', 'var' : 'S_LBL_SHAPE',
             'sect' : 'visSectionProp', 'visCustPropsType' : 'visPropTypeListFIX',
-            'visCustPropsFormat' : 'vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE',
+            'visCustPropsFormat' : '"""" & vw_strings.GenList(S_LBL_RECTANGLE, S_LBL_SQUARE, S_LBL_DIAMOND, S_LBL_RND_RECTANGLE, S_LBL_RND_SQUARE, S_LBL_RND_DIAMOND, S_LBL_OVAL, S_LBL_CIRCLE) & """"',
             'desc' : "Controls the shape of labels"}
 
 options = [dimensions, childoffset, skewwidth, activelow, period, skew, i_delay, i_delay, s_delay, duty, sigskew, busw, lbledges, lblsize, lblfont, nodefont, nodesize, lblshape]

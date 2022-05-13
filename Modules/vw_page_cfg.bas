@@ -27,6 +27,26 @@ Public Sub SetPageOptions(s as Shape)
   opts.Add o
   Set o = New option_i_delay_c
   opts.Add o
+  Set o = New option_s_delay_c
+  opts.Add o
+  Set o = New option_dutycycle_c
+  opts.Add o
+  Set o = New option_signalskew_c
+  opts.Add o
+  Set o = New option_buswidth_c
+  opts.Add o
+  Set o = New option_labeledges_c
+  opts.Add o
+  Set o = New option_labelsize_c
+  opts.Add o
+  Set o = New option_labelfont_c
+  opts.Add o
+  Set o = New option_nodefont_c
+  opts.Add o
+  Set o = New option_nodesizemult_c
+  opts.Add o
+  Set o = New option_labelshape_c
+  opts.Add o
 
   For Each o in opts
     o.AddTo s
